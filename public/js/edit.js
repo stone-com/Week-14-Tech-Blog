@@ -42,7 +42,7 @@ const deleteClickHandler = async () => {
 
   document.location.replace('/dashboard');
 };
-// adding event handlers
+// adding event listeners
 document
   .querySelector('#edit-post-form')
   .addEventListener('submit', editFormHandler);
