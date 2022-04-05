@@ -1,14 +1,16 @@
-// new post handler
+// new post
 const newFormHandler = async function (event) {
   event.preventDefault();
-  // save input values to variables
+
   const postTitle = document.querySelector('input[name="post-title"]').value;
   const postContent = document.querySelector(
     'textarea[name="post-body"]'
   ).value;
 
+  console.log(postTitle);
+  console.log(postContent);
+  // new post request with title and content as req.body
   await fetch(`/api/post`, {
-    //   post request, using posttitle and postcontent as req.body
     method: 'POST',
     body: JSON.stringify({
       postTitle,
@@ -17,7 +19,7 @@ const newFormHandler = async function (event) {
     headers: { 'Content-Type': 'application/json' },
   });
 };
-//   adding event listeners
+// event listeners
 document
   .querySelector('#new-post-form')
   .addEventListener('submit', newFormHandler);
